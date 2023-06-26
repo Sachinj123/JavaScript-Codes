@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management</title>
+</head>
+<head>
+    <script>
+    let emparr = [{
+        id:10,
+        name:"sachin",
+        address:"nanded"}];
+
+    function addnewEmployee()
+    {
+        id = parseInt(document.getElementById("id").value);
+        name = document.getElementById("nm").value; 
+        address = document.getElementById("addr").value;
+
+        var e ={
+            id,name,address 
+        };
+
+        emparr.push(e);
+        console.log(emparr);
+    }
+
+    function searchnewEmployee()
+    {
+        id= parseInt(document.getElementById("id").value);
+        ob = emparr.find(x =>x.id == id);
+        console.log(`id:${ob.id} name:${ob.name}`); 
+    }
+    </script>
+</head>
+<body>
+
+    <form >
+        Id: <input type="text" name="id" id="id"><br><br>
+        Name : <input type="text " name="nm" id="nm"><br><br>
+        Address : <input type="text" name="addr" id="addr"><br><br>
+        <button type="button" name="btn1" id="btn1" onclick="addnewEmployee()">Add New Employee</button>
+        <button type="button" name="btn2" id="btn2" onclick="searchnewEmployee()">Search Employee</button>
+    </form>
+    
+</body>
+</html>

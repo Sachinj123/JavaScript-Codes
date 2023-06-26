@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Demo 1</title>
+</head>
+<body>
+    <script>
+        arr = new Array(10,20,55,30,40);
+
+        //document.write(arr.push(50));
+        
+        //This is the new way to write the callback function
+        // x---> value, index is array index, arr is array
+        /*
+
+        //1ST WAY 
+        document.write(arr.find((x,index,arr) =>
+        {
+            console.log(x);
+            return x > 20;
+
+        }));
+        */
+       
+        //2nd WAY - Easy way to write the callback function
+        //WHEN WE USE CURLY BRACESS THE IT IS MANDATORY TO USE RETURN STATEMENT
+       // document.write(arr.find((x) => {return x > 20;}));
+
+        // 3rd WAY - Esay way to write the callback function
+        
+        document.write("Value: "+arr.find(x => x > 20)+"<br>");
+        document.write("Index: "+arr.findIndex(x => x > 20)+"<br>");
+
+        //FIND() ---> will return the actual value that satisfies the condition
+        //FINDINDEX() ---> will return the position where the condition matches
+        
+
+        document.write("Filter Finds all the numbers: "+arr.filter(x => x > 20)+"<br>");
+        document.write("Filter :"+arr.filter((x) => {return x > 20 && x % 3 == 0;})+"<br>");
+    
+        //1st way to print the array
+        document.write("Array Traversing using Normal For Loop :")
+        for(var i=0;i<arr.length;i++)
+        {
+            document.write(+arr[i]+" ");
+        }
+        
+        //2nd way to traverse array 
+        document.write("<br>"+"Array Traversing using For-each Loop :")
+        for(var x of arr)
+        {
+            document.write(x+" ");
+        }
+
+        //3rd way using lambda function
+        
+        arr.forEach((x) =>{document.write(x+" ")})+"<br>";
+
+
+        arr1 = new Array (10,20,30);
+
+        document.write(arr1.map(x => x*x)+"<br>");
+
+        //REDUCE FUNCTION --> khoop sarya value la "one" value madhe 
+        //convert karaycha asel tr reduce function use karaycha
+
+        //arr.reduce(callback(accumulator,currentvalue,currentindex,array),initialValue)
+        document.write("Sum of Array Element using Reduce Function :"+arr1.reduce((x,y) => {return x+y},0)+"<br>");
+        // x - accumulator (yaat aplyala value store karaychi ahe) and last la apan "x" la "0" ne initialize kelela ahe
+        // y - currentValue 
+    
+        arr2 = ["Java","C#","React","Hibernate","Spring","SpringBoot"];
+        document.write("Array String Concatination :"+arr2.reduce((x,y) =>{return x+y},""));
+        //apan yaat last la "x" la blank value ne assign kelela ahe
+    
+        
+    </script>
+    
+</body>
+</html>

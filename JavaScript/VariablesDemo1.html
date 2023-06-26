@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables Demos 1</title>
+</head>
+<body>
+    
+    <script>
+
+        const j=20;
+        //j=30;
+
+        //This will give a error
+        console.log(j);
+        var x="Testing";
+
+        //var he global variable ahe apan ethe declare karun kuthe pn use karu shakto
+        if(x == "Testing")
+        {
+            var course = "DAC";
+            let c1 = "DBDA";
+        }
+
+        console.log(course);
+        //console.log(c1); 
+        //----> This will given us error because let is a variable of "BLOCKED SCOPE" 
+        //let he if chya baher use karta yenar nahiy
+
+        /* 
+        console.log(a);
+        var a = "Sampada";
+        */
+       
+        //---> He asa kelya var "a" madhe undefined store hotay
+        // Tyamule pahile just var and variable la declare karun thevayvha
+        //ani nanter value assign karay chi
+
+        //SOLUTION OF ABOVE PROBLEM is konwn as ---> "Hoisting"
+        var a;
+        console.log("a "+ a);
+        var a = "Sampada";
+
+    </script>
+
+</body>
+</html>

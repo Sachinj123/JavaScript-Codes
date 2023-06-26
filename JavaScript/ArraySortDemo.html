@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Sort Demo</title>
+</head>
+<body>
+
+    <script>
+        arr = new Array(85,15,5,45,65,70,90,35);
+
+        //arr1 = new Array("Java","PHP","C#","Html","css","dsa","MySQL");
+        
+        function compare(a,b)
+        {
+            //return a-b; // ---> This is used to sort the element in ascending order
+            
+            return b-a; // ---> This will return array in desending order
+        }
+         //document.write(arr.sort()); //---->This will sort the array on the basis of "ASCII" Value 
+        // Internally it uses "AVL TREE SORT" 
+         document.write(arr.sort(compare));
+        
+         //POP ---> It removes the last element from array
+         arr.pop();
+         document.write("<br>"+arr);
+
+         //shift() ---> It removes the first element from array
+         arr.shift();
+         document.write("<br>"+arr);
+
+         //unshift() ---> It add the element at start of the array
+         arr.unshift(26);
+         document.write("<br>"+arr);
+    </script>
+    
+</body>
+</html>

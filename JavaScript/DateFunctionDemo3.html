@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Function Demo 3</title>
+</head>
+<head>
+    <script>
+        let dt = new Date("2023-06-20");
+        //bydefault it is converted into date format
+        alert(dt);
+
+        //let d1 = new Date(year,month,date,hours,second,millisecond);
+        dt1 = new Date(2023,6,20);
+        //here we only pass 3 parameters year, month, second
+        alert(dt1);
+
+        //TO GET THE DIFF BETN 2 DATES
+        dt2 = new Date ("2022-6-20");
+        dt3 = new Date ("2023-6-20");
+        
+        diff = dt2.getTime() - dt3.getTime(); // ----> this will give the answer in millisecond
+        // to convert into date (1000*3600*24)
+        days = diff / (1000 * 3600 * 24);
+        //1000 ---> 1 sec 
+        //3600 ---> 1hr second 
+        //24 ----> no of hrs
+        alert("The Days Diff betn 2 dates are:"+days);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

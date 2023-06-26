@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<head>
+
+    <script>
+        //HERE WE SHOW ADDITION OF TWO NUMBERS USING FORM AND SHOW THE ADDITION IN 3RD TEXT BOX
+        function adddata()
+        {
+            n1 = parseInt(document.getElementById("num1").value);
+            n2 = parseInt(document.getElementById("num2").value);
+
+            inp1 =  document.createElement("input");
+            //here we generate the input tag
+            
+            inp1.setAttribute("type","text");
+            //here we assign "type" ---> "text"
+            
+            inp1.setAttribute("id","ans");
+            //here we assign "id" ---> "ans"
+            
+            mydiv = document.getElementById("myDiv");
+            
+            mydiv.appendChild(inp1);
+
+            document.getElementById("ans").value = (n1 + n2);
+            //Text box kadhi pn innerHTML property naste
+
+
+        }
+
+    </script>
+
+</head>
+<body>
+
+    Num1: <input type="text" name="num1" id="num1"> <br> <br>
+    Num2: <input type="text" name="num2" id="num2"> <br> <br>
+
+    <button type="button" name="btn1" id="btn1" onclick="adddata()">ADD</button>
+    <div id="myDiv">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DEMO</title>
+</head>
+
+
+<!-- In Prompt window all data takes in string format therefore we need to do parseInt -->
+<!-- Apan Jar Confirm function madhe ok var click kela tar ans madhe true store honar nahi
+     tr cancle click kela tar false stode honar -->
+<!--Function declaration he hamesha tyachya declaration chya var pahije karan pahile he function load zala nahi tr error yenar
+apan jasa ya program madhe kelay tasa -->
+
+<head>
+    <script>
+        function displaymessage()
+        {
+            alert("This is alert Window");
+            //<!-- window.alert("This is alert Window"); -->
+           ans =  confirm("This is confirm Window");
+           if(ans)
+           {
+            //ans==ok above syntax is equivalent to this if(ans) 
+            alert("You Select Ok "+ans);
+           }
+           else
+           {
+            alert("You Select Cancle "+ans);
+           }
+    
+           num1 = prompt("Enter Num-1");
+           num2 = prompt("Enter Num-2");
+    
+           alert("ADDITION:"+(parseInt(num1)+parseInt(num2)));
+           
+        }
+    </script>
+</head>
+<body>
+   
+    <button type="button" name="btn" onclick="displaymessage()">Click Me</button>
+</body>
+</html>

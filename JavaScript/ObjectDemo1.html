@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Demo 1</title>
+</head>
+<head>
+    <script>
+        // it is array of object
+        arr = [{id : 103,name : "Nitin",address : "Nanded"},{id:102,name:"Sampada",address:"Pune"}]
+       
+        //NORMAL OBJECT
+        p1 = {
+            id : 101,
+            name : "Sachin",
+            address : "Nanded"
+        }
+
+        alert(typeof(p1));
+
+        alert(p1.id +" "+p1.name+" "+p1.address);
+        
+        console.log(p1);
+        
+        alert( arr[1].name);
+
+        //here we convert the javascript object into string 
+        jsonob = JSON.stringify(p1);
+        alert(jsonob);
+
+        //To convert the string into Javascript object
+        ob = JSON.parse(jsonob);
+        alert(ob);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

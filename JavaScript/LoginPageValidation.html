@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<head>
+    
+    <script>
+        //Here we use Internal Javascript
+        function validateusername()
+        {
+
+            uname = document.getElementById("uname").value;
+            // if we use if(uname == "") --> it will doesnot check for spaces
+            if(uname.trim().length == 0)
+            {
+                document.getElementById("unameerr").innerHTML = "Username is Manditory";
+               
+                return false;
+            }
+            else
+            {
+                document.getElementById("unameerr").innerHTML ="";
+               return true;
+            }
+
+        }
+        function validatepassword()
+        {
+           
+
+            pass = document.getElementById("pass").value;
+            // if we use if(pass == "") --> it will doesnot check for spaces
+            if(pass.trim().length == 0)
+            {
+                document.getElementById("passerr").innerHTML = "Password is Manditory";
+              
+                return false;
+            }
+            else
+            {
+                document.getElementById("passerr").innerHTML="";
+                return true;
+            }
+        }
+
+        function validatedata()
+        {
+            flag = validateusername();
+            flag1 = validatepassword();
+
+            //flag and flag1 will return true and false
+            if(flag && flag1) //---> this will equivalent to (flag==true && flag1 == true) 
+            {
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+
+        //FLOW ---> After clicking on button then it will call onsubmit and onsubmit call 
+        //validatedata() fun ---> validatedata() function call 2 function validateusername and validatepassword
+    </script>
+</head>
+<body>
+    <table>
+        <Form onsubmit=" return validatedata()">
+            <!--On Submit comes from buttopn type submit and it manditory to write return-->
+            <!-- If we provide the blank username and password then
+                 OnSubmit becomes false the the data doesnot go into the server -->
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="uname" id="uname"></td>
+                <td id="unameerr"></td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="pass" id="pass"></td>
+                <td id="passerr"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit" name="btn">Login</button></td>
+                <td></td>
+            </tr>
+        </Form>
+    </table>
+</body>
+</html>

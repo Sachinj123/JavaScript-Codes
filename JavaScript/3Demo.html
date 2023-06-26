@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<head>
+    <script>
+        function displaymessage()
+        {
+           //It use to retrieve the data from the textbox form and stored in the "name" variable  
+           name = document.getElementById("nm").value;
+
+           //document.write("Name:"+name); --> This will overwrite the page and shows the output
+
+           document.getElementById("myDiv").innerHTML = "Hello "+name;
+           // This will shows the output on the same page due to inner.HTML property and placeholder 
+           //property "myDiv"
+
+           //document.getElementById("myDiv").innerHTML += "Hello "+name; 
+           //---> This will used to concatinate the string data 
+
+           document.getElementById("nm").value="";
+           //Output show kelya nanter aplyala text box blank pahije tyamule 
+           //apan tyala blank kartoy last la
+
+
+        }
+    </script>
+</head>
+<body>
+   <input type="text" name="nm" id="nm">
+    <button type="button" name="btn" onclick="displaymessage()">Click Me</button>
+    <div id="myDiv"></div>
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Demo2</title>
+</head>
+<head>
+
+
+    <script>
+        //empty array declaration
+
+        var names = ["Pen","Pencil"];
+
+        //NEW WAY TO DECLARE THE FUNCTION
+        displaydata = () =>
+        {
+            str = "<ol>"
+            for(var i=0;i<names.length;i++)
+            {
+                str += "<li>"+names[i]+"</li>";
+            }
+            str += "<ol>"
+            document.getElementById("myDiv").innerHTML = str;
+        }
+
+        //OLDER WAY TO WRITE THE FUNCTION
+        function managedata()
+        {
+            arr = document.getElementsByName("action");
+            for(var i=0;i<arr.length;i++)
+            {
+                if(arr[i].checked)
+                {
+                    var op = arr[i].value;
+                    
+                    break;
+                }
+            }
+
+            switch(op)
+            {
+                case "add":
+                   nm = document.getElementById("nm").value;
+                   names.push(nm); 
+                   console.log(names);
+                    
+                   //document.getElementById("myDiv").innerHTML =names;
+                   displaydata();
+                    break;
+                
+                case "delete":
+                    nm = document.getElementById("nm").value;
+                    pos = names.indexOf(nm);
+                    //Index of function will return "-1" when the value is not found
+                    if(pos != -1)
+                    {
+                        names.splice(pos,1);
+                        //pos --> tya postion chi value delete karaycha and one 1 value
+
+                        //names = names.filter(x => x != nm);
+                        //this will delete all the occurances of array element
+                        console.log(names);
+                        displaydata();
+                    }
+                    break;
+
+                case "modify":
+                nm = document.getElementById("nm").value;
+                newnm = prompt("Enter New Name: ");
+                break;
+                pos = names.indexOf(nm);
+                if(pos != -1)
+                {
+                    //for Name modificatio or replace use "splice"
+                    names.splice(pos,1,newnm);
+                    //pos and 1 - find first occurance of name(nm)
+                    //newnm - replace with new name
+                    displaydata();
+                }
+                else{
+                    alert("Name not Found");
+                }
+                break;
+
+                case "displayall":
+                    displaydata();
+                    break;
+
+                case "search":
+                    nm = document.getElementById("nm").value;
+                   pos =  names.findIndex(x => x == nm);
+                    alert("Name found at "+pos);
+            }
+ 
+        }
+        
+
+        //NEW WAY TO DECLARE FUNCTION
+        /*
+        managedata() = function()
+        {
+            //Validation that text box is not empty and radio buttion is not selected by your own
+            // array of all radio button references
+           
+        }*/
+    </script>
+</head>
+
+<body>
+    <form>
+        Name: <input type="text" name="name" id="nm" placeholder="Enter Your Name">
+        
+        <input type="radio" name="action" id='add'    value="add"><label for="add">Add</label>
+        <input type="radio" name="action" id='delete' value="delete"><label for="delete">Delete</label>
+        <input type="radio" name="action" id='search' value="search"><label for="search">Search</label>
+        <input type="radio" name="action" id='modify' value="modify"><label for="modify">Modify</label>
+        <input type="radio" name="action" id='displayall' value="displayall"><label for="displayall">DisplayAll</label>
+        
+        <button type="button " name="btn " id="btn1 " onclick="managedata() ">do action</button>
+
+        <button type="reset" name="btn" id="btn2">Clear</button>
+        
+    </form>
+    <div id="myDiv"></div>
+</body>
+</html>

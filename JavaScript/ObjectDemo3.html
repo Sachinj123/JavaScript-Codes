@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Demo 3</title>
+</head>
+<body>
+    <script>
+        //Empty Object 
+        var ob = {};
+
+        var ob1 = Object.create();//another way to create empty object
+       
+
+    var Person = function(id,name,address)
+    {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.display = function()
+        {
+            document.write("Id is :"+this.id+" Name :"+this.name+" Address: "+this.address+"<br>");
+        }
+    }
+
+    person1 = new Person(12,"Hindavi","Vishnupuri");
+    console.log(person1);
+    person1.display();
+
+    var Employee = function(dept,desg){
+        this.dept = dept;
+        this.desg = desg;
+        this.displayEmployee = function(){
+            document.write("Department is :"+this.dept+" Designation :"+this.desg+"<br>");
+        }
+    }
+
+
+    //To achieve the inheritance ---> __proto__
+    emp1 = new Employee("HR","Manager");
+    console.log(emp1);
+
+    emp1.__proto__ = person1;
+    /*
+    for(p in emp1) {
+        console.log(`${p}---->${emp1[p]}`);
+    }
+    */
+
+    //To show only properties
+    //"in" ---> doesnt give you value it gives you property
+
+    for(var p in emp1){
+        if(emp1.hasOwnProperty(p)){
+            console.log(`${p}---->${emp1[p]}---->${typeof(emp1[p])}`);
+
+        }
+        else{
+            console.log(`parent property: ${p}---->${emp1[p]}---->${typeof(emp1[p])}`);
+        }
+    }
+    </script>
+    
+</body>
+</html>

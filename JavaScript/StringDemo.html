@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //HERE SPACESES ARE ALSO COUNT
+         str = "This is test";
+         console.log(str);
+
+         console.log("Chracter At Given Index:"+str.charAt(2));
+         
+         //substr --> Start 3rd index upto 6th index
+         console.log("Substr:"+str.substr(3,6));
+         
+        //substring ----> starting 3rd index and ending 4th index 
+         console.log("SubString :"+str.substring(3,4));
+
+         //Replace
+         console.log("Replace:"+str.replace("test","myTest"));
+        
+         //UPPERCASE
+         console.log("Upper Case:"+str.toUpperCase());
+        
+         //LOWERCASE
+         console.log("Lower Case:"+str.toLowerCase());
+
+         str1 = "    Sachin Jadhav   ";
+         console.log("Given String without Trim Function:"+str1);
+         console.log("Given String with Trim Function:"+str1.trim());
+         
+         //Here we split the string
+         //Here ',' act as a Delimiter and break the string into 4 parts
+         str2 = "101,Sampada,Pune,Engineer";
+         console.log(str2.split(","));
+
+         arr = str2.split(",");
+         //HERE WE JOIN THE STRING WITH THE HELP OF "|"
+         console.log("After Joining:"+arr.join(" | "))
+
+         
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<html>
+
+<head>
+    <script>
+        var names = ["Ashu", "Deepa", "sangeeta"];
+        /* function   managedata(){
+
+
+             }*/
+        displaydata = () => {
+            str = "<ol>";
+            for (var nm of names) {
+                str += "<li>" + nm + "</li>";
+                //str+=`<li>${nm}</li>`;
+            }
+            str += "</ol>";
+            alert(str);
+            document.getElementById("mydiv").innerHTML = str;
+        }
+        managedata = function() {
+            //validate that text box is not empty and radio button is selected
+            // array of all radio buttons references
+            arr = document.getElementsByName("action");
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].checked) {
+                    var op = arr[i].value;
+                    break;
+                }
+            }
+            switch (op) {
+                case "add":
+                    nm = document.getElementById("nm").value;
+                    names.push(nm);
+                    console.log(names);
+                    displaydata();
+                    break;
+                case "delete":
+                    nm = document.getElementById("nm").value;
+                    pos = names.indexOf(nm);
+                    if (pos != -1) {
+                        names.splice(pos, 1); //delete first occurance
+                        //names=names.filter(x=>x!=nm)  ///to delete all occurances
+                        console.log(names);
+                        displaydata();
+                    } else {
+                        alert("Name not found");
+                    }
+                    break;
+                case "modify":
+                    nm = document.getElementById("nm").value;
+                    newnm = prompt("enetr new name");
+                    pos = names.indexOf(nm);
+                    if (pos != -1) {
+                        names.splice(pos, 1, newnm); //delete first occurance and replace it with new value
+                        displaydata();
+                    } else {
+                        alert("Name not found");
+                    }
+                    break;
+                case "displayall":
+                    displaydata();
+                    break;
+                case "search":
+                    nm = document.getElementById("nm").value;
+                    pos = names.findIndex(x => x == nm);
+                    if (pos != -1) {
+                        alert(`the name found at ${pos+1} position`);
+                    } else {
+                        alert(`name ${nm} not found`);
+                    }
+            }
+        }
+
+        /* managedata=()=>{
+
+         }*/
+    </script>
+</head>
+
+<body onload="alert('in load event')">
+    <form>
+        Name :
+        <input type="text" name="name" id="nm" placeholder="enter name" onfocus="alert('in onfous event')" onblur="alert('in onblur event')">
+        <input type=" radio " name="action " id='add' value="add "><label for="add ">Add</label>
+        <input type="radio " name="action " id='delete' value="delete "><label for="delete ">delete</label>
+        <input type="radio " name="action " id='modify' value="modify "><label for="modify ">modify</label>
+        <input type="radio " name="action " id='displayall' value="displayall "><label for="displayall ">displayall</label>
+        <input type="radio " name="action " id='search' value="search "><label for="search ">
+                search</label>
+        <button type="button " name="btn " id="btn1 " onclick="managedata() ">do action</button>
+        <button type="reset " name="btn " id="btn2 ">clear</button>
+        <div id="mydiv "></div>
+    </form>
+</body>
+
+</html>

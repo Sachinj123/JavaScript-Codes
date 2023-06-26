@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Demo 2</title>
+</head>
+
+<head>
+    <!-- HERE WE PERFORM SET INTERVAL AND GET INTERVAL DEMO-->
+    <script>
+        var tm1;
+        function showDate()
+        {
+            dt = new Date();
+
+            document.getElementById("mydiv").innerHTML=dt;
+            
+        }
+
+        function assignDate()
+        {
+            //he continue run honar after every 1 second till we click on Stop Date
+            interval1 = setInterval(showDate,1000);
+            //apan fkt reference pass kartoy manun showDate cha tyamule "" use karat nahiy
+            //1000 ---> In millisecond ---> 1 Second
+        }
+
+        // Two types of Interval Function Set and ClearInterval
+        //SetInterval ---> we assign the reference of the showDate() function and after how many millisecond it will update we provided 
+
+        //clearInterval ---> Which function has to remove here we provided
+        function stopDate()
+        {
+            //it will stop the time
+            clearInterval(interval1);
+        }
+
+        function delaycall()
+        {
+            tm1 = setTimeout(() =>{
+                alert("Hello Sachin")
+            },10000);
+            //He Run honar 10 second nanter aapan jevha "SetTimeOut" ya button var click kelya var
+            //ani he fkt ekdach execute honar punha punha honar nahi
+        }
+
+        function removeDelay()
+        {
+            clearTimeout(tm1);
+        }
+            
+        
+    </script>
+</head>
+<body >
+    
+    <div id="mydiv"></div>
+
+    <button type="button" id="btn1" name="button" onclick="assignDate()">Show Date</button>
+    <button type="button" id="btn2" name="button" onclick="stopDate()">Stop Date</button>
+    <button type="button" id="btn3" name="button" onclick="delaycall()">SetTimeOut</button>
+</body>
+
+
+</html>

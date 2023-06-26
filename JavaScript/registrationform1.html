@@ -1,0 +1,197 @@
+<html>
+<style>
+    input:focus {
+        background-color: yellow;
+    }
+</style>
+
+<script>
+    //This is for Hobbies
+    function validateCheckBoxData()
+    {
+        hbarr = document.getElementsByName("hobbies");
+        count =0;
+        for(var i=0;i<hbarr.length;i++)
+        {
+            if(hbarr[i].checked)
+            {
+                count++;
+            }
+            if(count ==2)
+            {
+                document.getElementById("hob").innerHTML ="";
+                return true;
+            }
+        }
+        /*
+        for(var ob in hbarr)
+        {
+            if(ob.checked)
+            {
+                count++;
+            }
+            if(count == 2)
+            {
+                document.getElementById("hob").innerHTML="";
+                return true;
+            }
+        }*/
+        document.getElementById("hob").innerHTML="Please Select at Least 2 Hobbies";
+        return false;
+    }
+    function validateGenderData()
+    {
+        genderarr = document.getElementsByName("gender");
+        for(i=0;i<genderarr.length;i++)
+        {
+            if(genderarr[i].checked)
+            {
+                document.getElementById("genarr").innerHTML="";
+                return true;
+            }
+  
+        }
+
+        document.getElementById("genarr").innerHTML = "Please Select Respective Gender";
+        return false;
+
+    }
+function validatedegree()
+{
+    var degreearr = document.getElementsByName("degree");
+
+    //NORMAL FOR LOOP
+
+    for(var i=0;i<degreearr.length;i++)
+    {
+        if(degreearr[i].checked)
+        {
+            document.getElementById("degarr").innerHTML="";
+            return true;
+        }
+    }
+
+    //HERE WE USE FOR-EACH LOOP TO TRAVERSE
+    /*
+    for(var ob in degreearr)
+    {
+        if(ob.checked)
+        {
+            document.getElementById("degarr").innerHTML="";
+            return true;
+        }
+    }*/
+    document.getElementById("degarr").innerHTML="Please Select Respective Degree";
+    return false;
+}
+
+function validatedata()
+{
+    flag = validateGenderData();
+    flag1 = validatedegree();
+    flag2 = validateCheckBoxData();
+
+    if(flag && flag1 && flag2)
+    //This is equivalent to (flag && flag1 == true) 
+    {
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+
+</script>
+<body>
+    <table>
+        <!-- HERE WE USE ON SUBMIT ON THE LOGIN BUTTON -->
+        <form method="get" onsubmit="return validatedata()">
+            <tr>
+                <td><label for="nm">Name :</label></td>
+                <td><input type="text" name="name" id="nm" placeholder="Enter name" required minlength="3" maxlength="8" autofocus><span style="color:red">*</span></td>
+            </tr>
+            <tr>
+                <td><label for="age">Age :</label></td>
+                <td><input type="number" name="age" id="age" placeholder="Enetr age" required min="18" max="60"><span style="color:red">*</span></td>
+            </tr>
+            <tr>
+                <td><label for="Adress">Adress :</label></td>
+                <td><textarea rows="5" cols="30"></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="mobile">Mobile :</label></td>
+                <td>+91 - &nbsp;&nbsp; <input type="text" name="mobile" id="mobile" placeholder="enetr mobile" required pattern="[789]\d{9}"><span style="color:red">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="email">Email :</label></td>
+                <td><input type="email" name="email" id="email" placeholder="enetr email"></td>
+            </tr>
+            <tr>
+                <td><label for="jdate">Joining date :</label></td>
+                <td><input type="date" name="jdate" id="jdate" min="2022-04-02" max="2022-04-23" placeholder="enetr date"></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender :</label></td>
+                <td>
+                    <fieldset>
+                        <legend>Gender</legend>
+                        <input type="radio" name="gender" id="male" value="male">Male<br>
+                        <input type="radio" name="gender" id="female" value="female" >Female
+                    </fieldset>
+                </td>
+                <td id="genarr"></td>
+            </tr>
+            <tr>
+                <td><label>Degree :</label></td>
+                <td>
+                    <fieldset>
+                        <legend>Enter Degree</legend>
+                        <input type="radio" name="degree" id="be" value="BE" ><label for="be">BE</label><br>
+                        <input type="radio" name="degree" id="btech" value="BTech"><label for="btech">BTECH</label><br>
+                        <input type="radio" name="degree" id="MTech" value="MTech"><label for="MTech">MTECH</label>
+                    </fieldset>
+                </td>
+                <td id="degarr"></td>
+            </tr>
+
+            <tr>
+                <td><label>City :</label></td>
+                <td>
+                    <select name="city" id="city">
+                        <option value="">------select one city-----</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Nashik" >Nashik</option>
+                        <option value="Nagpur">Nagpur</option>
+                        <option value="Jalgaon">Jalgaon</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label>Hobbies :</label></td>
+                <td>
+                    <fieldset>
+                        <legend>Enter Hobbies</legend>
+                        <input type="checkbox" name="hobbies" id="reading" value="reading"><label for="reading">reading</label><br>
+                        <input type="checkbox" name="hobbies" id="biking" value="biking"><label for="biking">biking</label><br>
+                        <input type="checkbox" name="hobbies" id="sleeping" value="sleeping"><label for="sleeping">sleeping</label><br>
+                        <input type="checkbox" name="hobbies" id="eating" value="eating"><label for="eating">eating</label><br>
+                        <input type="checkbox" name="hobbies" id="trekking" value="trekking"><label for="trekking">trekking</label>
+                    </fieldset>
+                </td>
+                <td id="hob"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit" name="btn" id="btn1" value="btn1" >Login</button>&nbsp;&nbsp;&nbsp;
+
+                    <button type="reset" name="btn" id="btn2" value="btn2">Clear</button>
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>

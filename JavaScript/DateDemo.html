@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Demo</title>
+</head>
+<head>
+    <script>
+        function showDate()
+        {
+            dt = new Date();
+
+            alert(typeof(dt));
+            
+            document.getElementById("mydiv").innerHTML=dt;
+            
+            day = dt.getDay();  
+            //----> Gives Day of the week
+            
+            date = dt.getDate();
+            //Gives Date
+
+            Month = dt.getMonth()+1;
+            //Month counting start from 0 therefore +1
+            
+            Year = dt.getYear()+1900;
+            //It gives century year as 123 therefore we added 1900 to make it 2023
+
+            Year1 = dt.getFullYear();
+            //It will directly gives output as 2023
+            
+            document.write("Date: "+date +" / "+" Month: "+ Month +" / "+" Year: "+Year);
+            
+            document.write("<br>"+"Year with getFullYear Function :"+Year1);
+        }
+    </script>
+</head>
+<body onload="showDate()">
+    
+    <div id="mydiv">
+
+    </div>
+</body>
+</html>

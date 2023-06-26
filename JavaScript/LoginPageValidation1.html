@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<head>
+    <script src="./Js/LoginPageValidation.js">
+        //HERE WE ADD EXTERNAL JAVASCRIPT FILE 
+
+    </script>
+</head>
+<body>
+    
+    <table>
+        <Form onsubmit=" return validatedata()">
+            <!--On Submit comes from buttopn type submit and it manditory to write return-->
+            <!-- If we provide the blank username and password then
+                 OnSubmit becomes false the the data doesnot go into the server -->
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="uname" id="uname"></td>
+                <td id="unameerr"></td>
+            </tr>
+
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="pass" id="pass"></td>
+                <td id="passerr"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><button type="submit" name="btn">Login</button></td>
+                <td></td>
+            </tr>
+        </Form>
+    </table>
+
+</body>
+</html>

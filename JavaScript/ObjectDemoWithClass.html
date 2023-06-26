@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Demo with Class</title>
+</head>
+<body>
+    <script>
+        class Person{
+           constructor(id=0,name="",address="")
+           {
+            console.log("Inside Person Class's Constructor");
+                this.id = id;
+                this.name = name;
+                this.address = address;
+                
+           } 
+           display()
+           {
+           
+            console.log("Id is: "+this.id+" Name is: "+this.name+" address is: "+this.address);
+           }
+        }
+
+        class Employee extends Person{
+            constructor(id=0,name="",address="Pune",dept="Developer",desg="",sal=45000)
+            {
+                super(id,name,address);
+                console.log("Inside Employee Class's Constructor")
+                this.dept = dept;
+                this.desg = desg;
+                this.sal = sal;
+            }
+            //it is known as function ovverriding
+            display()
+        {
+            super.display();
+            console.log("Dept: "+this.dept+" Designation: "+this.desg+" Salary is: "+this.sal);
+        }
+        }
+        
+        ob = new Employee(101,"Samapada","Nanded","Ux","Designer",35000);
+        ob.display();
+    </script>
+    
+</body>
+</html>

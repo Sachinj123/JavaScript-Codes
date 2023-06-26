@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<head>
+    <script>
+        var count =0;
+        function addnewTextBox()
+        {
+            //DOM MANIPULATION
+            count++;
+           alert("add new textbox"); 
+           
+           //const chya jagi apan var pn ghetla tri chalel
+           const para = document.createElement("p");  
+           //----> It will generate paragraph tag (<p> </p>)
+
+           const data = document.createTextNode("This is Para ");
+           // ---> we have to add the data into para tag
+
+           para.setAttribute("id","p"+count);
+
+           para.appendChild(data); 
+           // ---> Here we add the data into paragraph tag
+
+           mydiv = document.getElementById("myparent");
+           mydiv.appendChild(para);
+           
+        }
+
+        function assignevent()
+        {
+            //HERE WE JUST ASSIGNING THE EVENTS 
+            //"click",addnewTextBox  ----> "CLICK" is which function want to perform and "addnewTextBox" and on whom to perform
+            document.getElementById("btn2").addEventListener("click",addnewTextBox);
+        }
+        
+        function removeevent()
+        {
+            //in removeEventListener which function wants to remove we remove the "click" function
+            // addnewTextBox----> and which function wants to remove
+            document.getElementById("btn2").removeEventListener("click",addnewTextBox);
+        }
+    </script>
+</head>
+
+<body>
+    
+    <button type="button" name="button" id="btn1" onclick="assignevent()">Assign Event</button>
+
+    <button type="button" name="button" id="rebtn1" onclick="removeevent()">Remove Event</button>
+
+    <button type="button" name="button" id="btn2">Get Event</button>
+
+    <div id="myparent">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoLocation</title>
+</head>
+<head>
+    <script>
+        function displayLocation()
+        {
+            if(navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(showposition, showerrormessage); // ---> It will used to show location only once
+                //navigator.geolocation.watchPosition(showposition, showerrormessage); // ----> It will used to track live location
+            }
+            else
+            {
+                document.getElementById("myloc").innerHTML = "Location not supported by Browser";
+            }
+        }
+
+        function showposition(showposition)
+        {
+            document.getElementById("myloc").innerHTML = "Lattitude :" + position.coords.latitude + " <br>Longitude : " + position.coords.longitude
+        }
+
+        function showerrormessage()
+        {
+            document.getElementById("myloc").innerHTML = "Error Occured";
+        }
+
+    </script>
+</head>
+<body>
+    <button type="button" name="btn" id="btn" onclick="displayLocation()">Get Location Details</button>
+    <p id="myloc"></p>
+</body>
+</html>

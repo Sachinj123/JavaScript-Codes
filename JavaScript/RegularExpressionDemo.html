@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+</head>
+<body>
+    <script>
+        
+        str = "This is test";
+        console.log("Search gives position:"+str.search(/test/g));
+        console.log("Match gives string:"+str.match(/test/g));
+        //If the match is not found then return null
+
+        //Regular Expression OBJECTS
+        str1 = "Something is there somewhere";
+
+        //First "S" capital aslya mule tyala count karat nahiy "exact function" madhe
+
+        let pattern = /s.*e/; //regular expression objects
+
+        let pattern1 = /s.*e/i; //---> i-ignore case (atta capital "S" la suddha count karel)
+
+        //FOR PATTERN :- the word starting from 1st occurance of "s" only small "s" and last occurance with "e"
+
+        //here we use "Test" function of Regular Expression
+        console.log("Test will return true or false:"+pattern.test(str1));
+        
+        //here we use exact function of Regular Expression
+        //the word starting from 1st occurance of "s" only small "s" and last occurance with "e"
+
+        console.log("Exact Function of Regular Expression:"+pattern.exec(str1)); //----> Output : "s there somewhere"
+
+        //---> i-ignore case (atta capital s la suddha count karel)
+       console.log("Exact Function :"+pattern1.exec(str1)); //OUTPUT ---> Something is there somewhere
+    
+
+       //PATTERN2 :- FOR 1ST OCCURANCE OF "s" or "S" and FIRST OCCURANCE OF "e"
+       let pattern2 = /s.*?e/i;
+       console.log("Test will return true or false:"+pattern2.test(str1));
+       console.log("Exact Function :"+pattern2.exec(str1)); //OUTPUT : Some "First occurance of S and first occurance of e"
+    
+    </script>
+</body>
+</html>

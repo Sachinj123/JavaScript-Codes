@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Function Demo</title>
+</head>
+
+<head>
+
+</head>
+<body>
+    <script>
+        function f1()
+        {
+            a = 10;
+            b = 20;
+
+            // If we Declare the function inside the another function is known as "nested Function" 
+            //and the "nested function" is known as "Closure Function"
+            
+            // Closure Function has access to the variables which are in its parent scope ---> f1() here
+            
+            //closure function has accessible only inside the f1() function
+
+            function f2()
+            {
+                return a+b;
+            }
+            s = f2();
+            alert("Addition is :"+s);
+        }
+
+        f1();  // Called only once
+
+        //These type of function is known as "Self Calling Function" it gets executed only once
+        ( function ()
+        {
+            alert("num1 = 10");
+        }) (); // ----> V.V.IMP SYNTAX
+    </script>
+</body>
+</html>

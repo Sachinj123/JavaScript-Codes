@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+</head>
+<body>
+    <script>
+     str1 = "Samapada is a training and financial consultancy, Run by, Sachin and Sampada";
+     pattern = /s.*,/;
+     //first occurance of small "s" and last occurance of ","
+     console.log("Test Function:"+pattern.test(str1)); 
+     console.log("Exact Function:"+pattern.exec(str1)); 
+     console.log(/s(.*?),/.exec(str1)); 
+
+    str2 = "this is testing 1234";
+    str3 = "this is not ending with digit";
+    
+    pattern1 = /\d$/; //---> it will check if the string is ending with digit "/d" 
+    console.log("Exact Function:"+pattern1.exec(str2));
+    console.log("Exact Function:"+pattern1.exec(str3));
+    </script>
+</body>
+</html>

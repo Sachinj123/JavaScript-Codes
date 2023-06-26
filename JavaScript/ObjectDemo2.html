@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Demo 2</title>
+</head>
+
+<script>
+    p1 = {
+        "id" : 55,
+        "name" : "Sachin",
+        "address" : "Nanded",
+        //here we assign the array of object to the object "p1"
+        hobbies : ["reading","watching web series"],
+        projects : [{pname:"lic",year:2023},{pname:"banking", year:2022}],
+        dept : {did : 100, dname:"HR"}
+
+    };
+    console.log("Project Name :"+p1.projects[0].pname+", Project Completed Year :"+p1.projects[0].year);
+    console.log("Department Id: "+p1.dept.did+" Department Name: "+p1.dept.dname);
+
+    //If we want to create the multiple objects like "p1" then we have to use "Constructor Function"
+    var Person = function(id,name,address)
+    {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.display = function()
+        {
+            document.write("Id is :"+this.id+" Name :"+this.name+" Address: "+this.address+"<br>");
+        }
+    }
+
+    person1 = new Person(10,"Ahilya","Nanded");
+    person1.mobileNo = 8390520192;
+    console.log(person1);
+    //To call function
+    person1.display();
+    // Suppose aplyala ek property add karaychi ahe tr apan karu shakto yaat
+    //tech apan java madhe karu shakat nahi because java is object oriented
+    //javascript is object based
+
+    //new properties can be added in object after creation ----> MobileNo
+
+    person2 = new Person(20,"Laxman","Nanded");
+    person2.display();
+    console.log(person2);
+
+    var Employee = function(dept,desg){
+        this.dept = dept;
+        this.desg = desg;
+        this.displayEmployee = function(){
+            document.write("Department is :"+this.dept+" Designation :"+this.desg+"<br>");
+        }
+    }
+
+    emp1 = new Employee("HR","Manager");
+
+    emp1.__proto__ = person1;
+    //PROTO is used to store the all properites of person1 into emp like inheritance
+    //person1 is superclass and employee is subclass
+    console.log(emp1);
+
+</script>
+<body>
+    
+</body>
+</html>
